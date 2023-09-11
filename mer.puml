@@ -1,0 +1,21 @@
+@startuml
+
+    entity usuario{
+        *ID:int
+        nombreU:varchar
+        nombreP:varchar
+        apellidoP:varchar
+        contrasenia:varchar
+        clavePublica:varchar
+        clavePrivada:varchar
+    }
+
+    entity sesion{
+        *ID:int
+        fecha:datetime
+        estado:enum("abierta","cerrada")
+    }
+
+    usuario "1" --> "n" sesion
+
+@enduml
