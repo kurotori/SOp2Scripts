@@ -4,7 +4,7 @@ use juego;
 
 create table usuario(
     ID varchar(36) unique not null 
-    primary key default uuid(),
+    primary key default (uuid()),
 
     nombreU varchar(36) unique not null,
     nombreP varchar(30),
