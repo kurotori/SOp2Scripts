@@ -3,9 +3,7 @@ create database juego;
 use juego;
 
 create table usuario(
-    ID varchar(36) unique not null 
-    primary key default uuid(),
-
+    ID varchar(36) unique not null primary key default uuid(),
     nombreU varchar(36) unique not null,
     nombreP varchar(30),
     apellidoP varchar(50),
