@@ -6,7 +6,7 @@ create table usuario(
     ID varchar(36) unique not null 
     primary key default uuid(),
 
-    nombreU varchar(12) unique not null,
+    nombreU varchar(36) unique not null,
     nombreP varchar(30),
     apellidoP varchar(50),
     contraseniaH varchar(250),
