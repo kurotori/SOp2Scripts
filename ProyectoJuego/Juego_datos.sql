@@ -8,11 +8,7 @@ insert into usuario(nombreP,apellidoP,nombreU) values
 ('Hilary','Jara','HiJara'),
 ('Jayme','Chaves','JaChaves'),
 ('Tate','Nogueira','TaNogueira'),
-<<<<<<< HEAD
 ('Yen','da Luz','YedaLuz'),
-=======
-('Yen','daLuz','YedaLuz'),
->>>>>>> 6ed068e624ce53b593200aa2972534d5469f6095
 ('Aquila','Sofia','AqSofia'),
 ('Eliana','Custodio','ElCustodio'),
 ('Odysseus','de Sousa','OddeSousa'),
@@ -22,11 +18,7 @@ insert into usuario(nombreP,apellidoP,nombreU) values
 ('Abdul','Trindade','AbTrindade'),
 ('Teegan','Vergara','TeVergara'),
 ('Mary','Feitosa','MaFeitosa'),
-<<<<<<< HEAD
 ('Brock','de Moraes','BrdeMorae'),
-=======
-('Brock','deMoraes','Brde Morae'),
->>>>>>> 6ed068e624ce53b593200aa2972534d5469f6095
 ('Igor','Miranda','IgMiranda'),
 ('Audra','Ramirez','AuRamirez'),
 ('Cain','Braga','CaBraga'),
@@ -53,11 +45,7 @@ insert into usuario(nombreP,apellidoP,nombreU) values
 ('Cassandra','Rojas','CaRojas'),
 ('Brendan','Fagundes','BrFagundes'),
 ('Channing','Bastos','ChBastos'),
-<<<<<<< HEAD
-('Noel','de Araujo','NodeArauj'),
-=======
-('Noel','deAraujo','Node Arauj'),
->>>>>>> 6ed068e624ce53b593200aa2972534d5469f6095
+('Noel','deAraujo','NodeArauj'),
 ('Aimee','Azizi','AiAzizi'),
 ('Zachery','Matias','ZaMatias'),
 ('Yael','Joaquin','YaJoaquin');
