@@ -50,6 +50,33 @@ insert into usuario(nombreP,apellidoP,nombreU) values
 ('Zachery','Matias','ZaMatias'),
 ('Yael','Joaquin','YaJoaquin');
 
+insert into sesion() values
+(),(),(),(),(),(),(),(),(),(),(),
+(),(),(),(),(),(),(),(),(),();
+
+insert into inicia(usuario_ID,sesion_ID)
+values
+('JaChaves',1),
+('GrSántos',2),
+('TeVergara',3),
+('MaAzizi',4),
+('ShGarcia',5),
+('Yeda Luz',6),
+('AuRamirez',7),
+('Yeda Luz',8),
+('HaPaula',9),
+('NeFrancisco',10),
+('NeFrancisco',11),
+('QudaSilveira',12),
+('HiCunha',13),
+('UlFelix',14),
+('QudaSilveira',15),
+('ShGarcia',16),
+('YaJoaquin',17),
+('YaJoaquin',18),
+('SiMendes',19),
+('TeVergara',20),
+('IgMiranda',21);
 
 
 
