@@ -27,3 +27,15 @@ create table inicia(
     sesion_ID int not null unique primary key
 );
 
+alter table inicia
+add constraint fk_usuario_inicia
+foreign key (usuario_ID)
+references usuario(ID)
+on update cascade
+on delete cascade,
+add constraint fk_inicia_sesion
+foreign key (sesion_ID)
+references sesion(ID)
+on update cascade
+on delete cascade
+;

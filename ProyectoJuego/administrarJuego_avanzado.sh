@@ -29,7 +29,9 @@ while [ "$opcion" != "s" ] && [ "$opcion" != "S" ]; do
     echo "--------"
 
     for((i=1;i<15;i++)); do
-        echo "$i    ${arrUsuarios[$i]}"
+        dato="${arrUsuarios[$i]}"
+        datos=$(echo "$dato"| sed "s/:/\t/g")
+        echo -e "$i\t$datos"
     done
 
     read opcion
