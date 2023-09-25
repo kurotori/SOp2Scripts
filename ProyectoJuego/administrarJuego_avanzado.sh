@@ -1,20 +1,27 @@
 #!/usr/bin/env bash
 clear
 
+
+consultaBD()
+{
+    
+}
+
+
+
+
+
 usuarioBD="estudiante"
-constraseniaBD="estudiante"
 
-consulta="select concat_ws(':',nombreU,ID,nombreP,apellidoP) from juego.usuario;"
 
-usuarios=$(mysql -u "$usuarioBD" -p"$constraseniaBD" -e "$consulta")
+consulta="select concat_ws(':',nombreU,ID,nombreP,apellidoP) as 'Usuario:ID:Nombre:Apellido' from juego.usuario;"
+usuarios=$(mysql -u "$usuarioBD" -p -e "$consulta")
 
+clear
 #echo "$usuarios"|cut -f 1
 
-arrUsuarios=( $(echo "$usuarios"|cut -d ":" -f 1,2) )
-
-for item in "${arrUsuarios[@]}"; do
-   echo "${item}"
-done
+arrUsuarios=( $(echo "$usuarios") )
+echo "$arrUsuarios"
 
 read ok
 
@@ -28,7 +35,7 @@ while [ "$opcion" != "s" ] && [ "$opcion" != "S" ]; do
     echo "Usuarios"
     echo "--------"
 
-    for((i=1;i<15;i++)); do
+    for((i=0;i<15;i++)); do
         dato="${arrUsuarios[$i]}"
         datos=$(echo "$dato"| sed "s/:/\t/g")
         echo -e "$i\t$datos"
