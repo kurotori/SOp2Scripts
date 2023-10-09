@@ -1,20 +1,28 @@
 #!/usr/bin/env bash
 clear
 
-usuarioBD="estudiante"
-constraseniaBD="estudiante"
+echo "Nombre de Usuario:"
+read usuarioBD
+echo "Contraseña:"
+read -s contraseniaBD
 
-consulta="select concat_ws(':',nombreU,nombreP,apellidoP) as 'nombreU:nombreP:apellidoP' from juego.usuario;"
-# "select concat_ws(':',nombreU,nombreP,apellidoP) 
-# as 'nombreU:nombreP:apellidoP' from juego.usuario;"
+consulta="select concat_ws(':',nombreU,nombreP,apellidoP)
+ as 'nombreU:nombreP:apellidoP' from juego.usuario;"
 
-datos=$(mysql -u "$usuarioBD" -p -e "$consulta")
-echo "$datos"
+ejecutarConsulta()
+{
+    datos=$(mysql -u "$1" -p"$2" -e "$3")
+    echo "$datos"
+}
 
-arrUsuarios=( $(echo "$datos") )
-echo "${#arrUsuarios[@]}"
+#ejecutarConsulta "$usuarioBD" "$contraseniaBD" "SET sql_notes=0;"
 
-for elemento in "${arrUsuarios[@]}"
+info=( $(ejecutarConsulta "$usuarioBD" "$contraseniaBD" "$consulta") )
+
+for indice in "${!info[@]}"
 do
-    echo "$elemento"|cut -d":" -f1,2
+    echo "${info[$indice]}"|sed "s/:/\t/g"
+    if [ "$indice" -eq 0 ]; then
+        echo "----------------------------"
+    fi
 done

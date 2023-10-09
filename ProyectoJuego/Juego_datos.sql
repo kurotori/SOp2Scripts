@@ -1,4 +1,4 @@
-insert into usuario(ID,nombreP,apellidoP,nombreU) values 
+insert into usuario(ID,nombreU,apellidoP,nombreP) values 
 ('5261f9e8-47ff-11ee-9a6a-f8b291c11216','ShGarcia','Shaeleigh','Garcia'),
 ('5261fbf2-47ff-11ee-9a6a-f8b291c11216','BrLima','Brennan','Lima'),
 ('5261fd2e-47ff-11ee-9a6a-f8b291c11216','ReGuimar','Reuben','Guimaraes'),
@@ -48,7 +48,7 @@ insert into usuario(ID,nombreP,apellidoP,nombreU) values
 ('52620a08-47ff-11ee-9a6a-f8b291c11216','NodeAra','Noel','de Araujo'),
 ('52620a51-47ff-11ee-9a6a-f8b291c11216','AiAzizi','Aimee','Azizi'),
 ('52620a9a-47ff-11ee-9a6a-f8b291c11216','ZaMatias','Zachery','Matias'),
-('52620ae4-47ff-11ee-9a6a-f8b291c11216','YaJoaqui','Yael','Joaquin'),
+('52620ae4-47ff-11ee-9a6a-f8b291c11216','YaJoaqui','Yael','Joaquin');
 
 insert into sesion() values
 (),(),(),(),(),(),(),(),(),(),(),
