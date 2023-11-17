@@ -39,3 +39,51 @@ references sesion(ID)
 on update cascade
 on delete cascade
 ;
+
+delimiter //
+
+drop procedure if exists datosDeUsuario;
+create procedure datosDeUsuario(
+    IN nombre varchar(36)
+)
+BEGIN
+    /* 4 - Al comienzo del procedimiento declaro cualquier variable
+     inicial que precise para la ejecución del mismo*/
+    declare IDusuario varchar(36);
+    declare nomUsuario varchar(36);
+    declare nombrePUsuario varchar(30);
+    declare apellidoPUsuario varchar(50);
+    declare sesiones_iniciadas int;
+    declare estado enum('online','offline');
+
+    SELECT 
+    ID,nombreU,nombreP,apellidoP
+    INTO
+    IDusuario, nomUsuario, nombrePUsuario, apellidoPUsuario
+    from juego.usuario
+    where nombreU=nombre;
+
+    SELECT
+    count(ID)
+    INTO sesiones_iniciadas
+    from sesion
+    where ID in
+    (SELECT sesion_ID from inicia WHERE
+    usuario_ID=IDusuario);
+
+    SELECT if(sesiones_iniciadas>1,"online","offline") into estado;
+
+    SELECT concat_ws(":",IDusuario,nomUsuario,nombrePUsuario,apellidoPUsuario,estado)
+    as "DatosDeUsuario";
+END//
+
+/* 8 - Tras la declaración del procedimiento, restauro el delimitador */
+delimiter ;
+
+SELECT
+    count(ID)
+    into @v1
+    from sesion
+    where ID in
+    (SELECT sesion_ID from inicia WHERE
+    usuario_ID="5261fd94-47ff-11ee-9a6a-f8b291c11216");

@@ -15,7 +15,11 @@
         fecha:datetime
         estado:enum("abierta","cerrada")
     }
+    entity inicia{
 
-    usuario "1" --> "n" sesion
+    }
+
+    usuario "1" --> inicia
+    inicia "n" --> sesion
 
 @enduml
